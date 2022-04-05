@@ -39,4 +39,8 @@ public class Telecommande {
         }
         return res;
     }
+
+    public ArrayList<Lampe> getLampes() {
+        return lampes;
+    }
 }
