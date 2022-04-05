@@ -6,6 +6,18 @@ class Lampe{
     +Lampe(nom : String) : Lampe
     +allumer() : void
     +eteindre() : void
+    +toString() : String
+}
+
+class Telecommande{
+    -lampes : ArrayList<Lampe>
+    +Telecommande(lampe : Lampe) : Telecommande
+    +ajouterLampe(Lampe lampe) : void
+    +activerLampe(int indiceLampe) : void
+    +desactiverLampe(int indiceLampe) : void
+    +activerTout() : void
+    +desactiverTout() : void
+    +toString() : String
 }
 
 @enduml
