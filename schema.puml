@@ -10,7 +10,7 @@ class Lampe{
 }
 
 class Telecommande{
-    -lampes : ArrayList<Lampe>
+
     +Telecommande(lampe : Lampe) : Telecommande
     +ajouterLampe(Lampe lampe) : void
     +activerLampe(int indiceLampe) : void
@@ -19,5 +19,7 @@ class Telecommande{
     +desactiverTout() : void
     +toString() : String
 }
+
+Lampe "*" <-- "*" Telecommande : - lampes
 
 @enduml
