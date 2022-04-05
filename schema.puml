@@ -3,7 +3,9 @@
 class Lampe{
     -nom : String
     -allume : boolean
-
+    +Lampe(nom : String) : Lampe
+    +allumer() : void
+    +eteindre() : void
 }
 
 @enduml
