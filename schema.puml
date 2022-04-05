@@ -1,6 +1,8 @@
 @startuml
 
 class Lampe{
+    -nom : String
+    -allume : boolean
 
 }
 
