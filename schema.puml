@@ -20,6 +20,15 @@ class Telecommande{
     +toString() : String
 }
 
+class Hifi{
+    -son : int
+    +allumer() : void
+    +eteindre() : void
+    +toString() : String
+}
+
+
 Lampe "*" <-- "*" Telecommande : - lampes
+Hifi "*" <-- "*" Telecommande : - hifis
 
 @enduml
