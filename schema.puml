@@ -13,8 +13,11 @@ class Telecommande{
 
     +Telecommande(lampe : Lampe) : Telecommande
     +ajouterLampe(Lampe lampe) : void
+    +ajouterHifi(Hifi hifi) : void
     +activerLampe(int indiceLampe) : void
+    +activerHifi(int indicehifi) : void
     +desactiverLampe(int indiceLampe) : void
+    +desactiverHifi(int indicehifi) : void
     +activerTout() : void
     +desactiverTout() : void
     +toString() : String
