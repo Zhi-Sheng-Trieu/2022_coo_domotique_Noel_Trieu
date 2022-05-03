@@ -9,13 +9,16 @@ class Lampe{
     -nom : String
     -allume : boolean
     +Lampe(nom : String) : Lampe
+    +allumer() : void
+    +eteindre() : void
     +isAllume() : boolean
     +toString() : String
 }
 
 class Telecommande{
-
     +Telecommande() : Telecommande
+    +allumer() : void
+    +eteindre() : void
     +ajouterAppareil(Appareil appareil) : void
     +activerAppareil(int indiceAppareil) : void
     +desactiverAppareil(int indiceAppareil) : void
@@ -26,13 +29,34 @@ class Telecommande{
 
 class Hifi{
     -son : int
+    +allumer() : void
+    +eteindre() : void
     +toString() : String
 }
 
+class Cheminee{
+    -intensité : int
+    +Cheminee() : Cheminee
+    +changerIntensite(int i) : void
+    +getLumiere () : int
+    +toString() : String
+}
 
-Appareil <. Lampe
-Appareil <. Hifi
+class ManipuleCheminee{
+    +ManipuleCheminee(Cheminee cheminee) : ManipuleCheminee
+    +allumer() : void
+    +eteindre() : void
+}
 
-Appareil "*" <-- "*" Telecommande : - appareils
+
+
+
+Appareil <|.. Lampe
+Appareil <|.. Hifi
+Appareil <|.. ManipuleCheminee
+Cheminee <|-- ManipuleCheminee
+
+
+Appareil "*" <- "*" Telecommande : - appareils
 
 @enduml
