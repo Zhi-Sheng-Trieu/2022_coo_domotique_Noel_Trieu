@@ -1,66 +1,48 @@
 import java.util.ArrayList;
 
 public class Telecommande {
-    private ArrayList<Lampe> lampes;
-    private ArrayList<Hifi> hifis;
+    private ArrayList<Appareil> appareils;
 
     public Telecommande() {
-        lampes = new ArrayList<Lampe>();
-        hifis = new ArrayList<Hifi>();
+        appareils = new ArrayList<Appareil>();
     }
 
-    public void ajouterLampe(Lampe lampe) {
-        lampes.add(lampe);
+    public void ajouterAppareil(Appareil appareil) {
+        appareils.add(appareil);
     }
 
-    public void ajouterHifi(Hifi hifi) {
-        hifis.add(hifi);
+    public void activerAppareil(int indiceAppareil) {
+        appareils.get(indiceAppareil).allumer();
     }
 
-    public void activerLampe(int indiceLampe) {
-        lampes.get(indiceLampe).allumer();
+
+    public void desactiverAppareil(int indiceAppareil) {
+        appareils.get(indiceAppareil).eteindre();
     }
 
-    public void activerHifi(int indiceHifi) {
-        hifis.get(indiceHifi).allumer();
-    }
-
-    public void desactiverLampe(int indiceLampe) {
-        lampes.get(indiceLampe).eteindre();
-    }
-
-    public void desactiverHifi(int indiceHifi) {
-        hifis.get(indiceHifi).eteindre();
-    }
 
     public void activerTout() {
-        for (Lampe lampe : lampes) {
-            lampe.allumer();
-        }
-        for (Hifi hifi : hifis) {
-            hifi.allumer();
+        for (Appareil appareil : appareils) {
+            appareil.allumer();
         }
     }
 
     public void desactiverTout() {
-        for (Lampe lampe : lampes) {
-            lampe.eteindre();
-        }
-        for (Hifi hifi : hifis) {
-            hifi.eteindre();
+        for (Appareil appareil : appareils) {
+            appareil.eteindre();
         }
     }
 
     @Override
     public String toString() {
         String res = "La telecommande controle : \n";
-        for (Lampe lampe : lampes) {
-            res += lampe+ "\n";
+        for (Appareil appareil : appareils) {
+            res += appareil+ "\n";
         }
         return res;
     }
 
-    public ArrayList<Lampe> getLampes() {
-        return lampes;
+    public ArrayList<Appareil> getAppareils() {
+        return appareils;
     }
 }

@@ -14,9 +14,9 @@ public class TelecommandeTest {
     public void test_ajoutLampe(){
         Telecommande telecommande = new Telecommande();
         Lampe lampe = new Lampe("lampe");
-        telecommande.ajouterLampe(lampe);
+        telecommande.ajouterAppareil(lampe);
 
-        assertEquals(lampe, telecommande.getLampes().get(0));
+        assertEquals(lampe, telecommande.getAppareils().get(0));
     }
 
     @Test
@@ -26,10 +26,10 @@ public class TelecommandeTest {
     public void test_ajoutLampe1Element(){
         Telecommande telecommande = new Telecommande();
         Lampe lampe = new Lampe("l2");
-        telecommande.ajouterLampe(new Lampe("l1"));
-        telecommande.ajouterLampe(lampe);
+        telecommande.ajouterAppareil(new Lampe("l1"));
+        telecommande.ajouterAppareil(lampe);
 
-        assertEquals(lampe, telecommande.getLampes().get(1));
+        assertEquals(lampe, telecommande.getAppareils().get(1));
     }
 
     @Test
@@ -39,8 +39,8 @@ public class TelecommandeTest {
     public void test_activationLampePos0(){
         Telecommande telecommande = new Telecommande();
         Lampe lampe = new Lampe("lampe");
-        telecommande.ajouterLampe(lampe);
-        telecommande.activerLampe(0);
+        telecommande.ajouterAppareil(lampe);
+        telecommande.activerAppareil(0);
 
         assertEquals(true, lampe.isAllume());
     }
@@ -52,9 +52,9 @@ public class TelecommandeTest {
     public void test_activationLampePos1(){
         Telecommande telecommande = new Telecommande();
         Lampe lampe = new Lampe("l2");
-        telecommande.ajouterLampe(new Lampe("l1"));
-        telecommande.ajouterLampe(lampe);
-        telecommande.activerLampe(1);
+        telecommande.ajouterAppareil(new Lampe("l1"));
+        telecommande.ajouterAppareil(lampe);
+        telecommande.activerAppareil(1);
 
         assertEquals(true, lampe.isAllume());
     }
@@ -67,7 +67,7 @@ public class TelecommandeTest {
         Telecommande telecommande = new Telecommande();
         boolean ok = false;
         try {
-            telecommande.activerLampe(0);
+            telecommande.activerAppareil(0);
         } catch(IndexOutOfBoundsException e){
             ok = true;
         }

@@ -1,23 +1,24 @@
 @startuml
 
+interface Appareil <<interface>>{
+    +allumer() : void
+    +eteindre() : void
+}
+
 class Lampe{
     -nom : String
     -allume : boolean
     +Lampe(nom : String) : Lampe
-    +allumer() : void
-    +eteindre() : void
+    +isAllume() : boolean
     +toString() : String
 }
 
 class Telecommande{
 
-    +Telecommande(lampe : Lampe) : Telecommande
-    +ajouterLampe(Lampe lampe) : void
-    +ajouterHifi(Hifi hifi) : void
-    +activerLampe(int indiceLampe) : void
-    +activerHifi(int indicehifi) : void
-    +desactiverLampe(int indiceLampe) : void
-    +desactiverHifi(int indicehifi) : void
+    +Telecommande() : Telecommande
+    +ajouterAppareil(Appareil appareil) : void
+    +activerAppareil(int indiceAppareil) : void
+    +desactiverAppareil(int indiceAppareil) : void
     +activerTout() : void
     +desactiverTout() : void
     +toString() : String
@@ -25,13 +26,13 @@ class Telecommande{
 
 class Hifi{
     -son : int
-    +allumer() : void
-    +eteindre() : void
     +toString() : String
 }
 
 
-Lampe "*" <-- "*" Telecommande : - lampes
-Hifi "*" <-- "*" Telecommande : - hifis
+Appareil <. Lampe
+Appareil <. Hifi
+
+Appareil "*" <-- "*" Telecommande : - appareils
 
 @enduml
