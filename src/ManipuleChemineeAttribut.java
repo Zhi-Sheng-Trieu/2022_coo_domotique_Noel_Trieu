@@ -13,4 +13,7 @@ public class ManipuleChemineeAttribut implements Appareil{
         cheminee.changerIntensite(0);
     }
 
+    public Cheminee getCheminee() {
+        return cheminee;
+    }
 }

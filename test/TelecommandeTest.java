@@ -75,4 +75,60 @@ public class TelecommandeTest {
         assertEquals(true, ok);
 
     }
+
+    @Test
+    /**
+     * test activation d'une cheminée
+     */
+    public void test_activationChemineeHerite(){
+        Telecommande telecommande = new Telecommande();
+        ChemineeAdaptateur cheminee = new ChemineeAdaptateur();
+        telecommande.ajouterAppareil(cheminee);
+        telecommande.activerAppareil(0);
+
+        assertEquals(10, cheminee.getLumiere());
+    }
+
+    @Test
+    /**
+     * test pour éteindre une cheminée
+     */
+    public void test_eteindreChemineeHerite(){
+        Telecommande telecommande = new Telecommande();
+        ChemineeAdaptateur cheminee = new ChemineeAdaptateur();
+        telecommande.ajouterAppareil(cheminee);
+        telecommande.activerAppareil(0);
+        telecommande.desactiverAppareil(0);
+
+        assertEquals(0, cheminee.getLumiere());
+    }
+
+    @Test
+    /**
+     * test activation d'une cheminée
+     */
+    public void test_activationChemineeAttribut(){
+        Telecommande telecommande = new Telecommande();
+        Cheminee cheminee = new Cheminee();
+        ManipuleChemineeAttribut chemineeAdapt = new ManipuleChemineeAttribut(cheminee);
+        telecommande.ajouterAppareil(chemineeAdapt);
+        telecommande.activerAppareil(0);
+
+        assertEquals(10, chemineeAdapt.getCheminee().getLumiere());
+    }
+
+    @Test
+    /**
+     * test pour éteindre une cheminée
+     */
+    public void test_eteindreChemineeAttribut(){
+        Telecommande telecommande = new Telecommande();
+        Cheminee cheminee = new Cheminee();
+        ManipuleChemineeAttribut chemineeAdapt = new ManipuleChemineeAttribut(cheminee);
+        telecommande.ajouterAppareil(chemineeAdapt);
+        telecommande.activerAppareil(0);
+        telecommande.desactiverAppareil(0);
+
+        assertEquals(0, chemineeAdapt.getCheminee().getLumiere());
+    }
 }
