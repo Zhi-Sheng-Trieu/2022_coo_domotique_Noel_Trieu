@@ -3,6 +3,10 @@ import thermos.Thermostat;
 public class ThermosAdaptateur implements Appareil{
     private Thermostat thermos;
 
+    public ThermosAdaptateur(Thermostat thermos){
+        this.thermos = thermos;
+    }
+
     public ThermosAdaptateur(){
         this.thermos = new Thermostat();
     }
