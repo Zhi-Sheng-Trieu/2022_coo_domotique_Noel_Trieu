@@ -16,4 +16,9 @@ public class ManipuleChemineeAttribut implements Appareil{
     public Cheminee getCheminee() {
         return cheminee;
     }
+
+    @Override
+    public String toString() {
+        return cheminee.toString();
+    }
 }
