@@ -47,15 +47,24 @@ class ChemineeAdaptateur{
     +eteindre() : void
 }
 
+class Thermostat{
+}
+
+class ThermosAdaptateur{
+    +allumer() : void
+    +eteindre() : void
+}
 
 
 
+
+ThermosAdaptateur ..|> Appareil
 Appareil <|.. Lampe
 Appareil <|.. Hifi
 Appareil <|.. ChemineeAdaptateur
 Cheminee <|-- ChemineeAdaptateur
 
-
+Thermostat <- ThermosAdaptateur : -thermostat
 Appareil "*" <- "*" Telecommande : - appareils
 
 @enduml
