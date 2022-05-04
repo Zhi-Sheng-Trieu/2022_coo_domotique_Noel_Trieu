@@ -42,8 +42,7 @@ class Cheminee{
     +toString() : String
 }
 
-class ManipuleCheminee{
-    +ManipuleCheminee(Cheminee cheminee) : ManipuleCheminee
+class ChemineeAdaptateur{
     +allumer() : void
     +eteindre() : void
 }
@@ -53,8 +52,8 @@ class ManipuleCheminee{
 
 Appareil <|.. Lampe
 Appareil <|.. Hifi
-Appareil <|.. ManipuleCheminee
-Cheminee <|-- ManipuleCheminee
+Appareil <|.. ChemineeAdaptateur
+Cheminee <|-- ChemineeAdaptateur
 
 
 Appareil "*" <- "*" Telecommande : - appareils
